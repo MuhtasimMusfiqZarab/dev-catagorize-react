@@ -1,14 +1,18 @@
 import React from "react";
 
 const Product = props => {
-  const product = props.products;
+  const products = props.products;
+  const searchText = props.searchText;
+  const valid = !!props.searchText;
+  console.log(valid);
   return (
     <div>
-      {Object.keys(product).map(key => {
+      {Object.keys(products).map(key => {
         return (
-          product[key].ParentCategoryId === 0 && (
+          !valid &&
+          products[key].ParentCategoryId === 0 && (
             <p className="list-item__title textHighlight list-item">
-              {product[key].Name}
+              {products[key].Name}
             </p>
           )
         );
@@ -18,9 +22,3 @@ const Product = props => {
 };
 
 export default Product;
-
-// {
-//     props.products.map(product => {
-//         return <p key={product}>{product}</p>;
-//     })
-// }

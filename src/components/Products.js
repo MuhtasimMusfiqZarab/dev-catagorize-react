@@ -3,17 +3,16 @@ import Product from "./Product";
 
 class Products extends Component {
   state = {
-    data: {},
     searchText: "",
-    products: []
+    products: {}
   };
 
   componentDidMount() {
     fetch("/json/json.json")
       .then(res => res.json())
-      .then(data => {
-        console.log(data);
-        this.setState({ data });
+      .then(products => {
+        console.log(products);
+        this.setState({ products });
       });
   }
 
@@ -26,6 +25,7 @@ class Products extends Component {
     console.log(this.state.searchText);
     return (
       <div>
+        {/*This is the search Text (input)*/}
         <div className="actions">
           <div className="actions__container">
             <input
@@ -38,7 +38,11 @@ class Products extends Component {
             />
           </div>
         </div>
-        <Product products={this.state.data} />
+        {/*Here Product is rendered*/}
+        <Product
+          products={this.state.products}
+          searchText={this.state.searchText}
+        />
       </div>
     );
   }

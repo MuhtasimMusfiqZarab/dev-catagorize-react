@@ -18,11 +18,12 @@ class Products extends Component {
   }
 
   //input in searchField
-  handleChange(e) {
+  handleChange = e => {
     this.setState({ searchText: e.target.value });
-  }
+  };
 
   render() {
+    console.log(this.state.searchText);
     return (
       <div>
         <div className="actions">
@@ -31,13 +32,13 @@ class Products extends Component {
               type="text"
               id="search-text"
               className="input"
+              //   value={this.state.searchText}
+              onChange={this.handleChange}
               placeholder="Search Products"
             />
           </div>
         </div>
         <Product products={this.state.data} />
-
-        <h1>Hello All</h1>
       </div>
     );
   }

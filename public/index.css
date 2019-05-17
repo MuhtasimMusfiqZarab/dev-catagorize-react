@@ -150,10 +150,11 @@ a {
   color: #333333;
   background: #f7f7f7;
   border: 1px solid #dedfe0;
-  margin: 1.6rem 0;
+  margin: 0.6rem 10rem;
   padding: 1.6rem;
   display: block;
   transition: background 0.3s ease;
+  text-align: center;
 }
 
 .list-item:hover {
@@ -162,7 +163,6 @@ a {
 
 .list-item__title {
   font-size: 1.8rem;
-  margin-bottom: 0.4rem;
 }
 
 .list-item__subtitle {

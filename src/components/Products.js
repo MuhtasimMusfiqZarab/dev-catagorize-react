@@ -1,12 +1,11 @@
 import React, { Component } from "react";
-import Searchbar from "./Searchbar";
 import Product from "./Product";
 
 class Products extends Component {
   state = {
-    data: [],
+    data: {},
     searchText: "",
-    products: ["New york", "Dhaka"]
+    products: []
   };
 
   componentDidMount() {
@@ -14,15 +13,30 @@ class Products extends Component {
       .then(res => res.json())
       .then(data => {
         console.log(data);
-        // this.setState({ data: data[0] });
+        this.setState({ data });
       });
+  }
+
+  //input in searchField
+  handleChange(e) {
+    this.setState({ searchText: e.target.value });
   }
 
   render() {
     return (
       <div>
-        <Searchbar />
+        <div className="actions">
+          <div className="actions__container">
+            <input
+              type="text"
+              id="search-text"
+              className="input"
+              placeholder="Search Products"
+            />
+          </div>
+        </div>
         <Product products={this.state.data} />
+
         <h1>Hello All</h1>
       </div>
     );

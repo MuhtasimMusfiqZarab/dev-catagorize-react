@@ -4,15 +4,25 @@ import Product from "./Product";
 
 class Products extends Component {
   state = {
+    data: [],
     searchText: "",
     products: ["New york", "Dhaka"]
   };
-  componentDidMount() {}
+
+  componentDidMount() {
+    fetch("/json/json.json")
+      .then(res => res.json())
+      .then(data => {
+        console.log(data);
+        // this.setState({ data: data[0] });
+      });
+  }
+
   render() {
     return (
       <div>
         <Searchbar />
-        <Product products={this.state.products} />
+        <Product products={this.state.data} />
         <h1>Hello All</h1>
       </div>
     );

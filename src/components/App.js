@@ -4,7 +4,7 @@ import Header from "./Header";
 import Products from "./Products";
 const App = () => {
   return (
-    <div className="ui container">
+    <div className="container">
       <Router>
         <Header />
         <Products />

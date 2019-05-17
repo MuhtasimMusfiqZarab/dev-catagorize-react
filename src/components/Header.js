@@ -9,16 +9,6 @@ const Header = () => {
           <h2 className="header__subtitle">Showing Product Catagories</h2>
         </div>
       </header>
-      <div className="actions">
-        <div className="actions__container">
-          <input
-            type="text"
-            id="search-text"
-            className="input"
-            placeholder="Search Products"
-          />
-        </div>
-      </div>
     </div>
   );
 };

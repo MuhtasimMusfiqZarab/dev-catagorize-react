@@ -5,7 +5,11 @@ class Product extends Component {
 
   render() {
     const products = this.props.products;
+    const searchText = this.props.searchText;
     const hasSearch = !!this.props.searchText;
+    const filteredProducts = products.filter(product =>
+      product.Name.toLowerCase().includes(searchText.toLowerCase())
+    );
     const parentProduct = products.filter(product => {
       return product.ParentCategoryId === 0;
     });
@@ -14,16 +18,30 @@ class Product extends Component {
 
     return (
       <div>
+        {/*Initial parent rendering*/}
         {parentProduct.map(parent => {
           return (
             <div key={parent.Id}>
-              {/* Parent Catagory Rendering Here */}
+              {/* Parent Catagory initial Rendering Here */}
               {!hasSearch && (
                 <p className="list-item__title textHighlight list-item">
                   {parent.Name}
                 </p>
               )}
-              {/* Child Catagory Rendering Here for every parent if needed*/}
+            </div>
+          );
+        })}
+
+        {/* Here are the filtered product rendering */}
+        {filteredProducts.map(filtered => {
+          return (
+            <div key={filtered.Id}>
+              {/* filtered Catagory initial Rendering Here */}
+              {hasSearch && (
+                <p className="list-item__title textHighlight list-item">
+                  {filtered.Name}
+                </p>
+              )}
             </div>
           );
         })}

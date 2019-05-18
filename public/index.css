@@ -149,6 +149,17 @@ a {
   text-decoration: none;
   color: #333333;
   background: #f7f7f7;
+  border: 1px solid #606060;
+  margin: 0.6rem 10rem;
+  padding: 1.6rem;
+  display: block;
+  transition: background 0.3s ease;
+  text-align: center;
+}
+.child-item {
+  text-decoration: none;
+  color: #333333;
+  background: #f7f7f7;
   border: 1px solid #dedfe0;
   margin: 0.6rem 10rem;
   padding: 1.6rem;
@@ -158,11 +169,20 @@ a {
 }
 
 .list-item:hover {
-  background: #eeeeee;
+  background: #577399;
+  color: #f7f7f7;
+}
+
+.child-item:hover {
+  background: #cce5ff;
 }
 
 .list-item__title {
   font-size: 1.8rem;
+}
+
+.child-item__title {
+  font-size: 1rem;
 }
 
 .list-item__subtitle {

@@ -4,7 +4,7 @@ import Product from "./Product";
 class Products extends Component {
   state = {
     searchText: "",
-    products: {}
+    products: []
   };
 
   componentDidMount() {

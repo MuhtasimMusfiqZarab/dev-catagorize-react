@@ -2,19 +2,25 @@ import React from "react";
 
 const Product = props => {
   const products = props.products;
-  const searchText = props.searchText;
-  const valid = !!props.searchText;
-  console.log(valid);
+  const parentProduct = products.filter(product => {
+    return product.ParentCategoryId === 0;
+  });
+  console.log(parentProduct);
+  const hasSearch = !!props.searchText;
+
+  // childRender(){
+
+  // }
+
   return (
     <div>
-      {Object.keys(products).map(key => {
+      {parentProduct.map(parent => {
         return (
-          !valid &&
-          products[key].ParentCategoryId === 0 && (
+          <div key={parent.Id}>
             <p className="list-item__title textHighlight list-item">
-              {products[key].Name}
+              {parent.Name}
             </p>
-          )
+          </div>
         );
       })}
     </div>

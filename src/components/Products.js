@@ -12,7 +12,6 @@ class Products extends Component {
     fetch("/json/json.json")
       .then(res => res.json())
       .then(products => {
-        console.log(products);
         this.setState({ products });
       });
   }

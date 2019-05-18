@@ -125,7 +125,7 @@ a {
 .child-item {
   text-decoration: none;
   font-style: italic;
-  color: #333333;
+  color: #666;
   background: #f7f7f7;
   border: 1px solid #f7f7f7;
   margin: 0.6rem 10rem;
@@ -152,19 +152,7 @@ a {
   font-size: 1rem;
 }
 
-.list-item__subtitle {
-  color: #666;
-  font-size: 1.4rem;
-  font-weight: 300;
-  font-style: italic;
-}
-
 .empty-message {
   text-align: center;
   margin: 3.2rem 0;
-}
-
-/* highlight text */
-.highlight {
-  background-color: yellow;
 }

@@ -7,6 +7,7 @@ class Products extends Component {
     products: []
   };
 
+  //fetching the json data
   componentDidMount() {
     fetch("/json/json.json")
       .then(res => res.json())
@@ -16,29 +17,28 @@ class Products extends Component {
       });
   }
 
-  //input in searchField
+  //getting seachTerm from input field
   handleChange = e => {
     this.setState({ searchText: e.target.value });
   };
 
   render() {
-    console.log(this.state.searchText);
     return (
       <div>
-        {/*This is the search Text (input)*/}
+        {/*This is the search Text (input) field*/}
         <div className="actions">
           <div className="actions__container">
             <input
               type="text"
               id="search-text"
               className="input"
-              //   value={this.state.searchText}
+              value={this.state.searchText}
               onChange={this.handleChange}
               placeholder="Search Products"
             />
           </div>
         </div>
-        {/*Here Product is rendered*/}
+        {/*Here individual product is rendered*/}
         <Product
           products={this.state.products}
           searchText={this.state.searchText}

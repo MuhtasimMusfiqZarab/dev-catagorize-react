@@ -14,8 +14,3 @@ const App = () => {
 };
 
 export default App;
-
-// <Switch>
-//   <Route path="/" component={Header} />
-//   <Route path="/" component={Products} />
-// </Switch>

@@ -37,8 +37,13 @@ class Product extends Component {
           return (
             <div key={filtered.Id}>
               {/* filtered Catagory initial Rendering Here */}
-              {hasSearch && (
+              {hasSearch && filtered.ParentCategoryId === 0 && (
                 <p className="list-item__title textHighlight list-item">
+                  {filtered.Name}
+                </p>
+              )}
+              {hasSearch && filtered.ParentCategoryId !== 0 && (
+                <p className="child-item__title textHighlight child-item">
                   {filtered.Name}
                 </p>
               )}
@@ -51,24 +56,3 @@ class Product extends Component {
 }
 
 export default Product;
-
-// //fetching all the childs for a parent catagory
-// getChild = id => {
-//   const children = this.props.products.filter(child => {
-//     return child.ParentCategoryId === id;
-//   });
-//   return children;
-// };
-
-// {
-//   this.getChild(parent.Id).map(child => {
-//     return (
-//       <p
-//         key={child.Id}
-//         className="child-item__title textHighlight child-item"
-//       >
-//         {child.Name}
-//       </p>
-//     );
-//   })
-// }

@@ -85,40 +85,6 @@ a {
   padding: 0.4rem 0.8rem;
 }
 
-.dropdown {
-  border-radius: 0;
-  border: 1px solid #dedfe0;
-  background: white;
-  font-size: 1.4rem;
-  font-weight: 300;
-  height: 3rem;
-  margin-right: 0.8rem;
-}
-
-.button {
-  background: #43799c;
-  border: none;
-  border-bottom: 2px solid #396684;
-  color: white;
-  font-size: 1.4rem;
-  font-weight: 300;
-  padding: 0.8rem;
-  transition: background 0.3s ease;
-}
-
-.button:hover {
-  background: #396684;
-}
-
-.button--secondary {
-  background: #888888;
-  border-bottom: 2px solid #717171;
-}
-
-.button--secondary:hover {
-  background: #6e6e6e;
-}
-
 /* Note editor */
 
 .title-input {
@@ -149,7 +115,7 @@ a {
   text-decoration: none;
   color: #333333;
   background: #f7f7f7;
-  border: 1px solid #606060;
+  border: 1px solid #f7f7f7;
   margin: 0.6rem 10rem;
   padding: 1.6rem;
   display: block;
@@ -158,9 +124,10 @@ a {
 }
 .child-item {
   text-decoration: none;
+  font-style: italic;
   color: #333333;
   background: #f7f7f7;
-  border: 1px solid #dedfe0;
+  border: 1px solid #f7f7f7;
   margin: 0.6rem 10rem;
   padding: 1.6rem;
   display: block;
